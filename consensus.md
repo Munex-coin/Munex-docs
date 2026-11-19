@@ -2,8 +2,11 @@
 
 This document states the consensus rules of the Munex testnet
 (chain 6621) as implemented in `launch/v11/node.py` (v11, sha256
-`d62b088e…`, genesis pin `1a36f67d…`). v11 is a new chain:
-it needs a FRESH genesis; a v10 chain does not carry over.
+`b5b0efc3…`, genesis pin `4aa436a1…`). v11 is the SAME chain as
+v10: same pin, same genesis ruleset (v12), no fresh genesis; a
+v10 node and a v11 node run the same chain. v11 only changes
+how nodes and miners FIND each other (peer discovery from the
+Munex registry — see section 12); it changes no consensus rule.
 
 Status: gate PASS on v11 (2026-11-19); the full launch-test campaign has not been re-run on v11. These rules are the rules
 of a testnet. They have not been independently audited.
@@ -236,7 +239,7 @@ deposit; VM gas costs are pre-Berlin. The fee is
   byte. The producer, the executor, and the verifier all
   recompute them; a block whose `_fee_charged` or `_gas_used`
   does not match the recomputation is rejected.
-- The constants are bound in the genesis ruleset (v13), so a
+- The constants are bound in the genesis ruleset (v12), so a
   node running different constants cannot join the chain.
 
 ## 8. Transactions and nonces — FIXED in intent
@@ -371,6 +374,14 @@ reader needs:
   block and adopted verbatim; it is data, not a rule change.
 - Log lines, warnings, and the monitor. A `[TIME-DRIFT]`
   warning never changes validity.
+- Peer discovery. How a node or miner finds other nodes —
+  DNS seed, bootstrap list, peer cache, or the Munex registry
+  list — is not consensus. The registry is not part of the
+  chain: it holds no chain state and no rule depends on it. The
+  node never pushes its IP to the registry; the registry learns
+  nodes from the seed DNS and by fetching each node's existing
+  `GET /peers` HTTP API. A down registry changes nothing — the
+  seed stays as the fallback.
 
 ## Fixed rules (summary)
 
