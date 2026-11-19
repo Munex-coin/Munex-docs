@@ -8,11 +8,11 @@ avoid it: the guard is a precompile that every contract call
 passes through when it calls `requirePass()`.
 
 This document describes the design as implemented in
-`launch/v10/node.py` (v10, sha256 `6398eb39…`). The consensus
+`launch/v11/node.py` (v11, sha256 `d62b088e…`). The consensus
 rules SVF depends on (epochs, certificates, prune floor, state
 root) are stated in `consensus.md`.
 
-Status: TESTNET CANDIDATE (2026-11-16). SVF has run with the
+Status: gate PASS on v11 (2026-11-19); the full launch-test campaign has not been re-run on v11. SVF has run with the
 **test key only**. No real committee key ceremony has happened,
 no independent audit has taken place, and certificate generation
 refuses to run with a non-test key. Do not present SVF as

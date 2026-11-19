@@ -1,11 +1,11 @@
 # Munex consensus rules
 
 This document states the consensus rules of the Munex testnet
-(chain 6621) as implemented in `launch/v10/node.py` (v10, sha256
-`6398eb39…`, genesis pin `4aa436a1…`). v10 is a consensus change:
-it needs a FRESH genesis; a v9.3 chain does not carry over.
+(chain 6621) as implemented in `launch/v11/node.py` (v11, sha256
+`d62b088e…`, genesis pin `1a36f67d…`). v11 is a new chain:
+it needs a FRESH genesis; a v10 chain does not carry over.
 
-Status: TESTNET CANDIDATE (2026-11-16). These rules are the rules
+Status: gate PASS on v11 (2026-11-19); the full launch-test campaign has not been re-run on v11. These rules are the rules
 of a testnet. They have not been independently audited.
 
 Where a rule is a *fixed* rule — one that must not change without
@@ -236,7 +236,7 @@ deposit; VM gas costs are pre-Berlin. The fee is
   byte. The producer, the executor, and the verifier all
   recompute them; a block whose `_fee_charged` or `_gas_used`
   does not match the recomputation is rejected.
-- The constants are bound in the genesis ruleset (v12), so a
+- The constants are bound in the genesis ruleset (v13), so a
   node running different constants cannot join the chain.
 
 ## 8. Transactions and nonces — FIXED in intent
