@@ -2,7 +2,7 @@
 
 This document states the consensus rules of the Munex testnet
 (chain 6621) as implemented in `launch/v11/node.py` (v11, sha256
-`b5b0efc3…`, genesis pin `4aa436a1…`). v11 is the SAME chain as
+`60c6772d…`, genesis pin `4aa436a1…`). v11 is the SAME chain as
 v10: same pin, same genesis ruleset (v12), no fresh genesis; a
 v10 node and a v11 node run the same chain. v11 only changes
 how nodes and miners FIND each other (peer discovery from the

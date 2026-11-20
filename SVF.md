@@ -8,7 +8,7 @@ avoid it: the guard is a precompile that every contract call
 passes through when it calls `requirePass()`.
 
 This document describes the design as implemented in
-`launch/v11/node.py` (v11, sha256 `b5b0efc3…`). The consensus
+`launch/v11/node.py` (v11, sha256 `60c6772d…`). The consensus
 rules SVF depends on (epochs, certificates, prune floor, state
 root) are stated in `consensus.md`.
 
