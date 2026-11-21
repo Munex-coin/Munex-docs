@@ -12,12 +12,6 @@ This document describes the design as implemented in
 rules SVF depends on (epochs, certificates, prune floor, state
 root) are stated in `consensus.md`.
 
-Status: gate PASS on v11 (2026-11-19); the full launch-test campaign has not been re-run on v11. SVF has run with the
-**test key only**. No real committee key ceremony has happened,
-no independent audit has taken place, and certificate generation
-refuses to run with a non-test key. Do not present SVF as
-production-grade.
-
 ## 1. Why SVF exists
 
 A maze lottery picks block producers, and every block carries
